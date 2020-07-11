@@ -1,0 +1,20 @@
+<div class="selectSeatsWrapper">
+  <div class="shows">
+    <span class="showText">Select Show: </span>
+    <mat-radio-group aria-label="Select an option" class="showRadioButton" (change)="showChanged($event)">
+      <mat-radio-button *ngFor="let show of shows; let i = index" [value]="i" [checked]="selectedShowNumber == i+1">{{show}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="seats">
+    <div class="row" *ngFor="let seatRow of seats">
+      <div class="seat" [ngClass]="{'hide': seat == null}" *ngFor="let seat of seatRow">
+        <input [id]="seat?.seatNumber" type="checkbox" [checked]="isSelected(seat)" [disabled]="seat?.booked" [value]="seat?.seatNumber" (click)="seatSelected(seat, $event)">
+        <label [for]="seat?.seatNumber">{{seat?.seatNumber}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="showText">Selected Seats : {{getSelectedSeats()}}</span>
+    <button (click)="bookTickets()">Book</button>
+  </div>
+</div>

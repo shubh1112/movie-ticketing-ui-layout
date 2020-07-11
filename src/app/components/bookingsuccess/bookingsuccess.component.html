@@ -1,0 +1,13 @@
+<div class="bookingSuccess">
+  <span class="showText">Successfully Booked - {{showName}}</span>
+  <div class="showText">Subtotal: Rs. {{bookingCost | number}}</div>
+  <div class="showText">Service Tax @14%: Rs. {{serviceTax | number}}</div>
+  <div class="showText">Swachh Bharat Cess @0.5%: Rs. {{swachhBharatCess | number}}</div>
+  <div class="showText">Krishi Kalyan Cess @0.5%: Rs. {{krishiKalyanCess | number}}</div>
+  <div class="showText">Total: Rs. {{total | number}}</div>
+</div>
+<div class="buttons">
+  <button (click)="back()">Back</button>
+  <button (click)="next()" style="margin-left: 10px;">Next</button>
+</div>
+ 

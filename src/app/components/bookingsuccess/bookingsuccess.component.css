@@ -1,0 +1,13 @@
+.showText {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.bookingSuccess {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+}
